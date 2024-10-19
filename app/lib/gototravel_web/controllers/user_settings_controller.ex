@@ -15,13 +15,7 @@ defmodule GototravelWeb.UserSettingsController do
     user = conn.assigns.current_user
 
     case Accounts.apply_user_email(user, password, user_params) do
-      {:ok, applied_user} ->
-        Accounts.deliver_user_update_email_instructions(
-          applied_user,
-          user.email,
-          &url(~p"/users/settings/confirm_email/#{&1}")
-        )
-
+      {:ok, _applied_user} ->
         conn
         |> put_flash(
           :info,
