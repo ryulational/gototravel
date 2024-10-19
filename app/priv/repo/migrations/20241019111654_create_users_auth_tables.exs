@@ -6,7 +6,7 @@ defmodule Gototravel.Repo.Migrations.CreateUsersAuthTables do
 
     create table(:users) do
       add :username, :citext, null: false
-      add :email, :citext, null: false
+      add :email, :citext
       add :hashed_password, :string, null: false
       add :confirmed_at, :utc_datetime
 

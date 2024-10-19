@@ -38,9 +38,8 @@ defmodule Gototravel.Accounts.User do
   """
   def registration_changeset(user, attrs, opts \\ []) do
     user
-    |> cast(attrs, [:username, :email, :password])
+    |> cast(attrs, [:username, :password])
     |> validate_username(opts)
-    |> validate_email(opts)
     |> validate_password(opts)
   end
 
